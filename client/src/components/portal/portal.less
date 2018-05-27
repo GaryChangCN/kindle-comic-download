@@ -1,0 +1,36 @@
+.portal {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    width: 100%;
+    .toaster {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .item {
+            margin-top: 15px;
+            min-width: 250px;
+            max-width: 450px;
+            word-break: break-all;
+            display: inline-block;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+            border-radius: 3px;
+            &[data-intent="Primary"] {
+                background: rgb(31, 120, 184);
+            }
+            &[data-intent="Success"] {
+                background: rgb(31, 184, 105);
+            }
+            &[data-intent="Warn"] {
+                background: rgb(200, 207, 8);
+            }
+            &[data-intent="Danger"] {
+                background: rgb(219, 44, 17);
+            }
+        }
+    }
+}

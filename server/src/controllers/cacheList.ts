@@ -2,27 +2,26 @@ import * as Router from 'koa-router'
 import config from '../config'
 import * as fs from 'fs'
 import * as path from 'path'
-
-interface Result {
-    name: string
-    child?: Result[]
-}
+import { CacheList } from '../typings'
 
 const listDirDeep = (paths) => {
     const list = fs.readdirSync(paths)
-    const result: Result[] = []
+    const result: CacheList[] = []
     list.forEach(name => {
         if (name === '.DS_Store' || name === '.gitkeep') {
             return
         }
-        if (fs.statSync(path.join(paths, name)).isDirectory()) {
+        const stat = fs.statSync(path.join(paths, name))
+        if (stat.isDirectory()) {
             result.push({
                 name,
                 child: listDirDeep(path.join(paths, name))
             })
         } else {
             result.push({
-                name
+                name,
+                time: stat.ctime,
+                size: stat.size
             })
         }
     })

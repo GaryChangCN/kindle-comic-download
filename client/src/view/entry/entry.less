@@ -1,0 +1,213 @@
+@import url('../app/var.less');
+
+.entry-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+    .url-link-container {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        &::before, &::after {
+            display: block;
+            content: "";
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            filter: blur(4px);
+            top: 0;
+            z-index: 1;
+        }
+        &::before {
+            background-image: url('http://owfai6ved.bkt.clouddn.com/haizei.jpg-webcom');
+            left: -50%;
+            background-position: left;
+        }
+        &::after {
+            background-image: url('http://owfai6ved.bkt.clouddn.com/heluo.jpg-webcom');
+            background-position: top;
+            right: -50%;
+            left: auto;
+        }
+        .url-link-content {
+            filter: blur(0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            height: 450px;
+            z-index: 2;
+            position: relative;
+    
+            background-image: url('http://owfai6ved.bkt.clouddn.com/misika6.jpg-webcom');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 1200px auto;
+        }
+
+        .input-wrap {
+            display: flex;
+            width: 500px;
+            height: 50px;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            padding-left: 20px;
+            background-color: rgba(255, 255, 255, 0.479);
+            align-items: center;
+            input {
+                border: 0;
+                flex-grow: 1;
+                background: transparent;
+                outline: none;
+                color: #fff;
+                font-size: 16px;
+                user-select: none;
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+            .get-file-btn {
+                flex-grow: 0;
+                flex-shrink: 0;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 20px;
+                padding-left: 15px;
+                border-radius: 0 25px 25px 0;
+                color: #fff;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.7);
+                    color: @color_main;
+                }
+            }
+        }
+    }
+    .cache-container {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        width: 100%;
+        .title {
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 15px 0;
+            font-size: 18px;
+            color: @color_main;
+            position: relative;
+            user-select: none;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 1px;
+                background-color: @color_main;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        .downloaded {
+            width: 100%;
+            display: flex;
+            flex-grow: 1;
+            .empty {
+                padding: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                opacity: .3;
+            }
+            .picture, .mobi {
+                display: flex;
+                flex-direction: column;
+                padding: 15px 0;
+                .sub-title {
+                    font-size: 12px;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    user-select: none;
+                }
+                .list {
+                    margin-top: 15px;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+            .picture {
+                flex-grow: 2;
+                .list {
+                    flex-wrap: wrap;
+                    display: flex;
+                    .item {
+                        margin-right: 30px;
+                        margin-bottom: 30px;
+                        position: relative;
+                        width: 150px;
+                        height: 195px;
+                        overflow: hidden;
+                        cursor: pointer;
+                        border: 5px solid #fff;
+                        &:hover {
+                            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.251);
+                        }
+                        .img {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .name {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            word-break: break-all;
+                            background: rgba(255, 255, 255, 0.69);
+                            width: 100%;
+                            padding: 0 3px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .mobi {
+                flex-basis: 300px;
+                flex-grow: 1;
+                flex-shrink: 0;
+                .list {
+                    .item {
+                        margin-bottom: 10px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        background-color: #fff;
+                        padding: 5px 10px;
+                        .label {
+                            display: inline-block;
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                        .time {
+                            flex-grow: 1;
+                            font-size: 12px;
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                        a {
+                            color: @color_main;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -47,6 +47,10 @@ export default async (ctx: Router.IRouterContext) => {
         } = ctx.request.body
 
         const url = reqBody.url
+        if (!url) {
+            ctx.status = 403
+            return
+        }
         const parsedUri = parseUri(url)
         const judgeRet = judgement(parsedUri)
 
