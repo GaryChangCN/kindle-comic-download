@@ -1,0 +1,48 @@
+{
+    "name": "kindle-comic-download",
+    "version": "0.0.1",
+    "description": "comic dowload for kindle",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "no"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GaryChangCN/kindle-comic-download.git"
+    },
+    "keywords": [
+        "kindle",
+        "comic",
+        "mobi"
+    ],
+    "author": "garychang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/GaryChangCN/kindle-comic-download/issues"
+    },
+    "homepage": "https://github.com/GaryChangCN/kindle-comic-download#readme",
+    "devDependencies": {
+        "@types/download": "^6.2.2",
+        "@types/file-type": "^5.2.1",
+        "@types/koa": "^2.0.45",
+        "@types/koa-router": "^7.0.28",
+        "@types/node": "^6.0.110",
+        "@types/superagent": "^3.5.8",
+        "http2": "^3.3.7",
+        "nokit": "^0.27.1",
+        "tslint": "^5.10.0",
+        "typescript": "^2.8.3"
+    },
+    "dependencies": {
+        "@types/koa-bodyparser": "^4.2.0",
+        "bl": "^1.2.2",
+        "download": "^7.0.0",
+        "file-type": "^8.0.0",
+        "img2mobi": "^0.0.4",
+        "koa": "^2.5.1",
+        "koa-bodyparser": "^4.2.0",
+        "koa-router": "^7.4.0",
+        "lodash.get": "^4.4.2",
+        "superagent": "^3.8.3"
+    }
+}
