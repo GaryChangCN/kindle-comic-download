@@ -36,4 +36,16 @@ module.exports = (task, option) => {
         }
     }))
 
+    task('tsc', 'compile ts', kit.async(function * () {
+        yield kit.spawn('./node_modules/.bin/tsc', [
+            '-p',
+            './tsconfig.json'
+        ])
+    }))
+
+    task('build', 'build server', kit.async(function * () {
+        yield kit.spawn('./node_modules/.bin/no', ['tsc'])
+        yield kit.spawn()
+    }))
+
 }

@@ -11,6 +11,8 @@ assets/**/*.jpg
 assets/**/*.png
 assets/**/*.jpeg
 assets/**/*.mobi
+dist
+build
 
 # Runtime data
 pids

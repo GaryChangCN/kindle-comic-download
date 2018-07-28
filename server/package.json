@@ -30,6 +30,7 @@
         "@types/superagent": "^3.5.8",
         "http2": "^3.3.7",
         "nokit": "^0.27.1",
+        "rollup": "^0.59.4",
         "tslint": "^5.10.0",
         "typescript": "^2.8.3"
     },
